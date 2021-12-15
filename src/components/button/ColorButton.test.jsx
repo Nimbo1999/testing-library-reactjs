@@ -36,10 +36,13 @@ test('Button can not call a function when disabled', () => {
     render(<ColorButton disabled />);
 
     const colorButton = screen.getByRole('button', { name: 'Change to blue' });
-    expect(colorButton).toHaveStyle({ backgroundColor: 'red' });
-
     fireEvent.click(colorButton);
-
     expect(colorButton).toBeDisabled();
-    expect(colorButton).toHaveStyle({ backgroundColor: 'red' });
 });
+
+test('Button need to be gray when it is disabled', () => {
+    render(<ColorButton disabled />);
+
+    const colorButton = screen.getByRole('button', { name: 'Change to blue' });
+    expect(colorButton).toHaveStyle({ backgroundColor: 'gray' });
+})

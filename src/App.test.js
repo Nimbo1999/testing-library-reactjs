@@ -25,5 +25,24 @@ describe('Centered functional tests of button with checkbox', () => {
         expect(colorButton).toBeDisabled();
     });
 
+    test('Button will be gray when disabled', () => {
+        render(<App />);
+
+        const checkBox = screen.getByRole('checkbox');
+        const colorButton = screen.getByRole('button');
+        fireEvent.click(checkBox);
+
+        expect(colorButton).toBeDisabled();
+        expect(colorButton).toHaveStyle({ backgroundColor: 'gray' });
+        fireEvent.click(checkBox);
+
+        expect(colorButton).toHaveStyle({ backgroundColor: 'red' });
+        fireEvent.click(colorButton);
+        fireEvent.click(checkBox);
+        expect(colorButton).toHaveStyle({ backgroundColor: 'gray' });
+        fireEvent.click(checkBox);
+        expect(colorButton).toHaveStyle({ backgroundColor: 'blue' });
+    });
+
 });
 

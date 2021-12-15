@@ -9,7 +9,7 @@ const ColorButton = ({ disabled }) => {
 
     return (
         <button
-            style={{ backgroundColor, color: 'white' }}
+            style={{ backgroundColor: disabled ? 'gray' : backgroundColor, color: 'white' }}
             onClick={onClick}
             disabled={disabled}
         >
