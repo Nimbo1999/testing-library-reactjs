@@ -22,3 +22,9 @@ test('Chechbox must call a function when pressed', () => {
 
     expect(mockFunction).toHaveBeenCalled();
 });
+
+test('Checkbox must have a label', () => {
+    render(<CheckBox />);
+    const checkbox = screen.getByRole('checkbox', { name: 'Disable button' });
+    expect(checkbox).toBeInTheDocument();
+});
