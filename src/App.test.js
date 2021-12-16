@@ -36,12 +36,12 @@ describe('Centered functional tests of button with checkbox', () => {
         expect(colorButton).toHaveStyle({ backgroundColor: 'gray' });
         fireEvent.click(checkBox);
 
-        expect(colorButton).toHaveStyle({ backgroundColor: 'red' });
+        expect(colorButton).toHaveStyle({ backgroundColor: 'MediumVioletRed' });
         fireEvent.click(colorButton);
         fireEvent.click(checkBox);
         expect(colorButton).toHaveStyle({ backgroundColor: 'gray' });
         fireEvent.click(checkBox);
-        expect(colorButton).toHaveStyle({ backgroundColor: 'blue' });
+        expect(colorButton).toHaveStyle({ backgroundColor: 'MidnightBlue' });
     });
 
 });
